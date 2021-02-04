@@ -15,6 +15,7 @@ public class Movie {
     String backDropPath;
     String releaseDate;
     double rating;
+    boolean adultCheck;
 
     //for the parceler
     public Movie(){}
@@ -26,6 +27,7 @@ public class Movie {
         overview = jsonObject.getString("overview");
         rating = jsonObject.getDouble("vote_average");
         releaseDate = jsonObject.getString("release_date");
+        adultCheck = jsonObject.getBoolean("adult");
     }
     public static List<Movie> fromJsonArray (JSONArray movieJsonArray) throws JSONException {
         List<Movie> movies= new ArrayList<>();
@@ -58,6 +60,10 @@ public class Movie {
 
     public String getReleaseDate() {
         return String.format("Release date: %s",releaseDate);
+    }
+
+    public boolean isAdultCheck() {
+        return adultCheck;
     }
 }
 

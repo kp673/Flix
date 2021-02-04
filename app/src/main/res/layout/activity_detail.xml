@@ -54,4 +54,19 @@
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         tools:text="Release Date" />
+
+    <CheckBox
+        android:id="@+id/adultCheck"
+        style="@android:style/Widget.Holo.Light.CompoundButton.CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:buttonTint="#00FFFF"
+        android:clickable="false"
+        android:focusable="auto"
+        android:text="Is Adult?  "
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
 </LinearLayout>

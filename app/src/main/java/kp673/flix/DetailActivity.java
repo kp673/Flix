@@ -3,6 +3,7 @@ package kp673.flix;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.CheckBox;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ public class DetailActivity extends AppCompatActivity {
     TextView tvOverview;
     TextView tvRelease;
     RatingBar ratingBar;
+    CheckBox adultCheck;
 
 
     @Override
@@ -32,12 +34,15 @@ public class DetailActivity extends AppCompatActivity {
         tvOverview= findViewById(R.id.tvOverview);
         ratingBar = findViewById(R.id.ratingBar);
         tvRelease = findViewById(R.id.tvRelease);
+        adultCheck = findViewById(R.id.adultCheck);
+
 
         Movie movie = Parcels.unwrap(getIntent().getParcelableExtra("movie"));
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
         ratingBar.setRating((float) movie.getRating());
         tvRelease.setText(movie.getReleaseDate());
+        adultCheck.setChecked(movie.isAdultCheck());
 
     }
 }
