@@ -12,7 +12,7 @@ import org.parceler.Parcels;
 import kp673.flix.models.Movie;
 
 public class DetailActivity extends AppCompatActivity {
-
+    private static final String YOUTUBE_API_KEY = "AIzaSyCVZ_T75B---wnH1-PT9-DA2ccLygA62tw";
     TextView tvTitle;
     TextView tvOverview;
     TextView tvRelease;
