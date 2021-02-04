@@ -14,6 +14,7 @@ public class Movie {
     String overview;
     String backDropPath;
     String releaseDate;
+    int movieID;
     double rating;
     boolean adultCheck;
 
@@ -28,6 +29,7 @@ public class Movie {
         rating = jsonObject.getDouble("vote_average");
         releaseDate = jsonObject.getString("release_date");
         adultCheck = jsonObject.getBoolean("adult");
+        movieID = jsonObject.getInt("id");
     }
     public static List<Movie> fromJsonArray (JSONArray movieJsonArray) throws JSONException {
         List<Movie> movies= new ArrayList<>();
@@ -64,6 +66,10 @@ public class Movie {
 
     public boolean isAdultCheck() {
         return adultCheck;
+    }
+
+    public int getMovieID() {
+        return movieID;
     }
 }
 

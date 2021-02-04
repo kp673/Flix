@@ -9,10 +9,18 @@
     android:orientation="vertical"
     tools:context=".DetailActivity">
 
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#000000"
+        android:backgroundTint="#FBFBFB" />
+
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#000000"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
