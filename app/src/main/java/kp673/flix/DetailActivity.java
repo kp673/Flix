@@ -39,6 +39,7 @@ public class DetailActivity extends YouTubeBaseActivity{
     YouTubePlayerView youTubePlayerView;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,15 +88,15 @@ public class DetailActivity extends YouTubeBaseActivity{
             }
         });
 
-
     }
 
-    private void initializeYoutube(final String youTubeKey) {
+    public void initializeYoutube(final String youTubeKey) {
         youTubePlayerView.initialize(YOUTUBE_API_KEY, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d("DetailActivity", "onInitializationSuccess");
-                youTubePlayer.cueVideo(youTubeKey);
+                youTubePlayer.loadVideo(youTubeKey);
+
             }
 
             @Override
