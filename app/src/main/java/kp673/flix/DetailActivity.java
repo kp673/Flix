@@ -37,6 +37,7 @@ public class DetailActivity extends YouTubeBaseActivity{
     RatingBar ratingBar;
     CheckBox adultCheck;
     YouTubePlayerView youTubePlayerView;
+    Boolean popular=false;
 
 
 
@@ -61,6 +62,9 @@ public class DetailActivity extends YouTubeBaseActivity{
         ratingBar.setRating((float) movie.getRating());
         tvRelease.setText(movie.getReleaseDate());
         adultCheck.setChecked(movie.isAdultCheck());
+        if (movie.getRating()>5){
+            popular= true;
+        }
 
         AsyncHttpClient client= new AsyncHttpClient();
         client.get(String.format(VIDEOS_URL, movie.getMovieID()), new JsonHttpResponseHandler() {
@@ -95,7 +99,13 @@ public class DetailActivity extends YouTubeBaseActivity{
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d("DetailActivity", "onInitializationSuccess");
-                youTubePlayer.loadVideo(youTubeKey);
+                if (popular){
+                    youTubePlayer.loadVideo(youTubeKey);
+
+                }
+                else {
+                    youTubePlayer.cueVideo(youTubeKey);
+                }
 
             }
 

@@ -24,6 +24,7 @@ import org.parceler.Parcels;
 
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 import kp673.flix.DetailActivity;
 import kp673.flix.MainActivity;
 import kp673.flix.R;
@@ -33,6 +34,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
     Context context;
     List<Movie> movies;
+    int radius = 30;
+    int margin = 10;
 
     public MovieAdapter(Context context, List<Movie> movies) {
         this.context = context;
@@ -87,6 +90,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
                     .with(context)
                     .load(imageUrl)
                     .placeholder(R.drawable.pla)
+                    .transform(new RoundedCornersTransformation(radius, margin))
                     .into(poster);
             container.setOnClickListener(new View.OnClickListener() {
                 @Override
