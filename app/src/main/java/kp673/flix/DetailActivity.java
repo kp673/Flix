@@ -111,7 +111,7 @@ public class DetailActivity extends YouTubeBaseActivity{
 
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-                Log.d("DetailActivity", "onInitializationFailure");
+                Log.e("DetailActivity", "onInitializationFailure" + youTubeInitializationResult);
             }
         });
     }
